@@ -30,19 +30,17 @@ const CustomTooltip = ({ payload, label, active }) => {
 
 const HistoryChart = ({ data }) => {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={300} height={100} data={data}>
-        <Line
-          type="monotone"
-          dataKey="sentimentScore"
-          stroke="#8884d8"
-          strokeWidth={2}
-          activeDot={{ r: 8 }}
-        />
-        <XAxis dataKey="createdAt" />
-        <Tooltip content={<CustomTooltip />} />
-      </LineChart>
-    </ResponsiveContainer>
+    <LineChart width={800} height={500} data={data}>
+      <Line
+        type="monotone"
+        dataKey="sentimentScore"
+        stroke="#8884d8"
+        strokeWidth={2}
+        activeDot={{ r: 8 }}
+      />
+      <XAxis dataKey="createdAt" />
+      <Tooltip content={<CustomTooltip />} />
+    </LineChart>
   )
 }
 
